@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import moviesApi from "../../services/moviesApi";
 import Header from "./Header";
 import Button from "@mui/material/Button";
-// import ModalComponent from '../movies/ModalComponent';
 import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
@@ -12,23 +11,10 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import "../../index.css";
 import Grid from "@mui/material/Grid";
-// import { alignProperty } from "@mui/material/styles/cssUtils";
 
 const Index = () => {
   const [movieList, setMovieList] = useState([]);
   const [error, setError] = useState(false);
-  // const [selectedMovie, setSelectedMovie] = useState(null);
-
-  // const handleModalOpen = (_selectedMovie) => {
-  //   setSelectedMovie(_selectedMovie);
-  // };
-  // const handleModalClose = () => {
-  //   setSelectedMovie(null);
-  // };
-
-  // <Modal open={selectedMovie} onClose={handleModalClose}>
-  //   Movie content
-  // </Modal>;
 
   const [navigateOptions, setNavigateOptions] = useState({
     next: null,
@@ -48,7 +34,6 @@ const Index = () => {
     getMovieList(param);
   };
 
-  // const [open, setOpen] = React.useState(false);
   const [selectedMovie, setSelectedMovie] = useState(null);
 
   const handleOpen = (selected) => {
