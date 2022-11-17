@@ -1,67 +1,12 @@
-// import React, { useState } from "react";
-// import { useNavigate } from "react-router-dom";
-
-// import AuthApi from "../../services/authApi";
-
-// export default () => {
-//   const navigate = useNavigate();
-//   const [formData, setFormData] = useState({
-//     username: "testuser",
-//     password: "#X3z)A@bFYKa5ch6",
-//   });
-//   const [error, setError] = useState(null);
-
-//   const handleFieldChange = (event) => {
-//     const { value, name } = event.target;
-//     setFormData({ ...formData, [name]: value });
-//   };
-
-//   const handleFormSubmit = async (evt) => {
-//     evt.preventDefault();
-//     const { username, password } = formData;
-//     const resp = await AuthApi.login({ username, password });
-//     if (resp.success) {
-//       navigate("/movies");
-//     } else {
-//       setError(resp.error);
-//     }
-//   };
-
-//   return (
-//     <div>
-//       {error && <h4>{error}</h4>}
-//       <form onSubmit={handleFormSubmit}>
-//         <input
-//           type="text"
-//           placeholder="username"
-//           name="username"
-//           onChange={handleFieldChange}
-//         />
-//         <input
-//           type="password"
-//           placeholder="password"
-//           name="password"
-//           onChange={handleFieldChange}
-//         />
-//         <button type="submit">Log In</button>
-//       </form>
-//     </div>
-//   );
-// };
-
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import LoginIcon from '@mui/icons-material/Login';
 import LoginIcon from "@mui/icons-material/Login";
 import AuthApi from "../../services/authApi";
-// import Box from '@mui/material/Box';
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
-// import Paper from "@mui/material/Paper";
 import { Box, Card } from "@mui/material";
 import '../../index.css';
-// import Button from '../../components/Button'
 
 const Index = () => {
   const navigate = useNavigate();
@@ -90,12 +35,6 @@ const Index = () => {
       setError(resp.response.data.error.message);
     }
   };
-
-  //   const styles = {
-  //     paperContainer: {
-  //         backgroundImage: `url(${ 'DrStrange.jpg'})`
-  //     }
-  // };
 
   return (
     <Grid>
@@ -148,9 +87,6 @@ const Index = () => {
               >
                 Log In
               </Button>
-              {/* <Button type="button" color="primary" className="form__custom-button">
-            Log in
-          </Button> */}
             </form>
           </Grid>
         </Card>
